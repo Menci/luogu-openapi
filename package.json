@@ -1,0 +1,30 @@
+{
+  "name": "@menci/luogu-openapi",
+  "version": "1.0.0",
+  "description": "Luogu OpenAPI SDK (unofficial)",
+  "main": "dist/index.js",
+  "repository": "https://github.com/Menci/luogu-openapi.git",
+  "author": "Menci <huanghaorui301@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "node-fetch": "2",
+    "uuid": "^9.0.0",
+    "ws": "^8.13.0"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.7",
+    "utf-8-validate": "^6.0.3"
+  },
+  "files": [
+    "/dist"
+  ],
+  "devDependencies": {
+    "@types/node-fetch": "2",
+    "@types/uuid": "^9.0.1",
+    "@types/ws": "^8.5.4",
+    "typescript": "^5.0.4"
+  }
+}
