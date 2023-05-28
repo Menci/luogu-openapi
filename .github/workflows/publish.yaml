@@ -1,0 +1,25 @@
+name: NPM Publish
+
+on:
+  push:
+    tags: v*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: NPM Publish
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+      - name: Build
+        run: yarn build
+      - name: Publish
+        uses: JS-DevTools/npm-publish@v2
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          tag: ${{ endsWith(github.ref_name, 'next') && 'next' || 'latest' }}
