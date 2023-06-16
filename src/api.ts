@@ -148,6 +148,7 @@ export class LuoguOpenApiClient {
       lastUpdateTime: Date.now()
     });
     this.ensureWebSocket();
+    return trackId;
   }
 
   stop() {
